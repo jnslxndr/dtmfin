@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9E2F9AA4-F552-468C-BF1B-38BA20DACB8E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>dtmfin</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4F4A7345-3FAB-41FF-ADD8-D29C027E6714</key>
+		<string>ssh://github.com/jens-a-e/libdtmf.git</string>
+		<key>EE31D99D-8F77-40C0-8A38-9EE91F4FDBEB</key>
+		<string>ssh://github.com/jens-a-e/dtmfin.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>dtmfin.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4F4A7345-3FAB-41FF-ADD8-D29C027E6714</key>
+		<string>../../../../libdtmf</string>
+		<key>EE31D99D-8F77-40C0-8A38-9EE91F4FDBEB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/jens-a-e/dtmfin.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EE31D99D-8F77-40C0-8A38-9EE91F4FDBEB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE31D99D-8F77-40C0-8A38-9EE91F4FDBEB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>dtmfin</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4F4A7345-3FAB-41FF-ADD8-D29C027E6714</string>
+			<key>IDESourceControlWCCName</key>
+			<string>libdtmf</string>
+		</dict>
+	</array>
+</dict>
+</plist>
