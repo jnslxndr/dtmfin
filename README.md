@@ -1,7 +1,7 @@
 dtmfin
 ======
 
-simple portaudio based dtmf decoder with simple udp send functionality
+simple portaudio based dtmf decoder with osc functionality
 
 
 dependencies
