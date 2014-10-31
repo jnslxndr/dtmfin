@@ -18,7 +18,7 @@
 #include "osc/OscOutboundPacketStream.h"
 #include "ip/UdpSocket.h"
 
-#define SAMPLING_RATE 8000
+#define SAMPLING_RATE 44100
 
 extern "C" {
   #include "dtmf.h"
@@ -215,6 +215,7 @@ int main(int argc, char * const argv[])
   std::clog << "Sending OSC to " << host << " on port " << port << " with path '" << osc_path << "'" << std::endl;
   
   std::clog << "Time for repeated detection is set to " << ((int)(timeOut*1000)) << " milliseconds." << std::endl;
+  std::clog << "Samplerate is set to " << SAMPLING_RATE << "Hz" << std::endl;
   
   
   // try to open audio:
