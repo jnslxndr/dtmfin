@@ -20,7 +20,7 @@ typedef int bool;
 
 #define kMinNoiseTolerenceFactor	1.5
 #define kMaxNoiseTolerenceFactor	6.5
-#define kDefaultPowerMeasurementMethod 0x02
+#define kDefaultPowerMeasurementMethod 0x01
 
 
 static double	powers[NUM_FREQS];		// Location to store the powers for all the frequencies
