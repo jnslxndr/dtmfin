@@ -7,7 +7,7 @@ SRC=dtmfin
 
 LIBS=-lportaudio
 
-BIN_DIR=bin
+BIN_DIR=build
 OUT = $(BIN_DIR)/$(PRODUCT)
 
 REMOVE = rm -rf
