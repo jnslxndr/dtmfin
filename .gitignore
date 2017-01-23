@@ -1,3 +1,7 @@
 build/
 *.o
 bin
+dtmfin.xcodeproj/project.xcworkspace/xcuserdata
+dtmfin.xcodeproj/project.xcworkspace/xcuserddata
+dtmfin.xcodeproj/xcuserdata
+dtmfin.xcodeproj/project.xcworkspace/xcshareddata

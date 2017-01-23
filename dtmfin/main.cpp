@@ -21,13 +21,12 @@
 #define SAMPLING_RATE 44100
 
 extern "C" {
-  #include "dtmf.h"
+  #include <dtmf.h>
 }
 
-#include "portaudio.h"
+#include <portaudio.h>
 
-const char *default_path = "/dtmf";
-char * osc_path = (char*)default_path;
+char * osc_path = (char*)"/dtmf";
 
 struct OSCSender {
   UdpTransmitSocket *socket;
@@ -48,7 +47,7 @@ void catch_int(int sig) {
 }
 
 
-static PaTime timeOut = .5; // default to 200 millisecond timeout
+static PaTime timeOut = 1.0f; // default to 1 second timeout
 
 static int audioCallback( const void *inputBuffer, void *outputBuffer,
                           unsigned long framesPerBuffer,
@@ -98,7 +97,7 @@ const PaDeviceInfo* deviceInfo;
 void usage() {
   printf("\
 usage:\n\
-    dtmfin -h <IP address> -p <port> -t <time out> [-d <device id>]\n\
+    dtmfin -h <IP address> -p <port> -t <time out> [-d <device id>] [-o <osc path>]\n\
     dtmfin -l (to list devices)\n"
   );
 }
@@ -146,7 +145,7 @@ int main(int argc, char * const argv[])
     { NULL,        0,                      NULL,            0  }
   };
   
-  while ((c = getopt_long (argc, argv, ":h:p:t:d:l",longopts,NULL)) != -1)
+  while ((c = getopt_long (argc, argv, ":h:p:t:d:l:o",longopts,NULL)) != -1)
     switch (c)
   {
     case 'h':
@@ -212,10 +211,8 @@ int main(int argc, char * const argv[])
   OSCSender osc_sender(&_sock,_stream);
   _sock.SetEnableBroadcast(true);
   
-  std::clog << "Sending OSC to " << host << " on port " << port << " with path '" << osc_path << "'" << std::endl;
-  
-  std::clog << "Time for repeated detection is set to " << ((int)(timeOut*1000)) << " milliseconds." << std::endl;
-  std::clog << "Samplerate is set to " << SAMPLING_RATE << "Hz" << std::endl;
+  std::clog << "Sending OSC to " << host << ":" << port << "" << osc_path << std::endl;
+  std::clog << "Trying to use sampling rate " << SAMPLING_RATE << "Hz" << std::endl;
   
   
   // try to open audio:
@@ -246,12 +243,12 @@ int main(int argc, char * const argv[])
   
   std::clog
   << "Audio initialized with:" << std::endl
-  << "  Device       " << deviceInfo->name << std::endl
-  << "  Latency      " << info->inputLatency << "ms" << std::endl
-  << "  Samplerate   " << info->sampleRate << "kHz" << std::endl
-  << "  Buffer Size  " << BUFFER_SIZE << "samples" << std::endl;
-  
-  std::clog << "Read for detection!" << std::endl;
+  << "  Device         " << deviceInfo->name << std::endl
+  << "  Latency        " << info->inputLatency << "ms" << std::endl
+  << "  Samplerate     " << info->sampleRate << "kHz" << std::endl
+  << "  Buffer Size    " << BUFFER_SIZE << "samples" << std::endl
+  << "  Debounce Time  " << timeOut << "s" << std::endl
+  << "Ready for detection!" << std::endl;
   
   // pause and let the audio thread to the work
   while(running) pause();

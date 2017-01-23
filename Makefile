@@ -1,26 +1,26 @@
 #### Simple Makefile for Simple Projects ####
 
 # Just declare the Project name
-PRODUCT = dtmfosc
+PRODUCT = dtmfin
 
 SRC=dtmfin
 
-LIBS=-lportaudio
-
-BIN_DIR=build
+BIN_DIR=bin
 OUT = $(BIN_DIR)/$(PRODUCT)
 
 REMOVE = rm -rf
 
-# LINKED_LIBS = -L$(wildcard deps/**/lib)
+LIBS=-lportaudio -ldtmf
+
+LIB_PATHS = -L./lib/dtmf/lib
 
 OSC_LIB=./lib/oscpack_1_1_0
 
-INCLUDES=-I$(BIN_DIR) -I$(OSC_LIB)
+INCLUDES=-I$(BIN_DIR) -I$(OSC_LIB) -I./lib/dtmf/include
 
-LDFLAGS=$(LINKED_LIBS) $(LIBS) -lstdc++
+LDFLAGS=$(LIB_PATHS) $(LIBS) -lstdc++ -v
 
-CFLAGS=$(INCLUDES) -Wall -Wstrict-prototypes -std=c99
+CFLAGS=$(INCLUDES) -Wall -Wstrict-prototypes
 # CPPFLAGS=
 
 OSC_SOURCES=$(wildcard $(OSC_LIB)/osc/*.cpp) $(wildcard $(OSC_LIB)/ip/posix/*.cpp) $(wildcard $(OSC_LIB)/ip/*.cpp)
